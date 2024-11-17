@@ -1,7 +1,8 @@
-name: animated_slider
-description: "A new Flutter package project."
+name: animated_infinite_slider
+description: "An advanced Flutter animation package to create an infinite, draggable slider for showcasing any widget list (e.g., images, cards, or custom widgets). The slider supports seamless animations, draggable interactions, and customization options to suit your app's design.
+"
 version: 0.0.1
-homepage:
+homepage: https://github.com/alphabetic100/infinite-draggable-slider
 
 environment:
   sdk: ^3.5.2

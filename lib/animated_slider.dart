@@ -2,7 +2,7 @@ library animated_slider;
 
 import 'dart:math';
 import 'dart:ui';
-import 'package:animated_slider/widgets/draggable_widget.dart';
+import 'package:animated_infinite_slider/widgets/draggable_widget.dart';
 import 'package:flutter/material.dart';
 
 class AnimatedSlider extends StatefulWidget {
