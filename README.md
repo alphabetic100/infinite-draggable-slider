@@ -1,5 +1,3 @@
-
-```markdown
 # 🚀 Infinite Draggable Slider 🌟
 
 An advanced **Flutter animation package** to create an **infinite, draggable slider** for showcasing any widget list (e.g., images, cards, or custom widgets). The slider supports seamless animations, draggable interactions, and customization options to suit your app's design.
@@ -164,7 +162,7 @@ Contributions are welcome! Feel free to open issues or submit pull requests.
 ## 🎥 Demo  
 
 Include a demo GIF or image to showcase your slider in action!  
-```markdown
+----
 ![Infinite Draggable Slider](demo/demo.gif)
 ```
 
