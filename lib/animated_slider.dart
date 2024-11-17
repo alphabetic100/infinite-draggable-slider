@@ -10,7 +10,7 @@ class AnimatedSlider extends StatefulWidget {
     super.key,
     this.heinght,
     this.width,
-    this.alignment,
+    this.padding,
     this.onTap,
     required this.itemCount,
     required this.itemBuielder,
@@ -19,7 +19,7 @@ class AnimatedSlider extends StatefulWidget {
 
   final double? heinght;
   final double? width;
-  final Alignment? alignment;
+  final EdgeInsets? padding;
   final Function? onTap;
   final Function(BuildContext context, int index) itemBuielder;
   final int itemCount;
@@ -100,23 +100,30 @@ class _AnimatedSliderState extends State<AnimatedSlider>
     return AnimatedBuilder(
         animation: controller,
         builder: (context, _) {
-          return Stack(
-              children: List.generate(4, (stackIndex) {
-            final modIndex = (index + 3 - stackIndex) % widget.itemCount;
-            return Transform.translate(
-              offset: getOffset(stackIndex),
-              child: Transform.scale(
-                scale: getScale(stackIndex),
-                child: Transform.rotate(
-                  angle: getAngle(stackIndex),
-                  child: DraggableWidget(
-                      onSliderOut: onSliderOut,
-                      child: widget.itemBuielder(context, modIndex),
-                      isEnableDrag: stackIndex == 3),
-                ),
-              ),
-            );
-          }));
+          return SizedBox(
+            height: widget.heinght,
+            width: widget.width,
+            child: Padding(
+              padding: widget.padding?? const EdgeInsets.all(0.8),
+              child: Stack(
+                  children: List.generate(4, (stackIndex) {
+                final modIndex = (index + 3 - stackIndex) % widget.itemCount;
+                return Transform.translate(
+                  offset: getOffset(stackIndex),
+                  child: Transform.scale(
+                    scale: getScale(stackIndex),
+                    child: Transform.rotate(
+                      angle: getAngle(stackIndex),
+                      child: DraggableWidget(
+                          onSliderOut: onSliderOut,
+                          child: widget.itemBuielder(context, modIndex),
+                          isEnableDrag: stackIndex == 3),
+                    ),
+                  ),
+                );
+              })),
+            ),
+          );
         });
   }
 }
